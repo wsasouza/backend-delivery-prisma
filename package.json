@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Walter Santos de Andrade Souza",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts"
+  },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",
