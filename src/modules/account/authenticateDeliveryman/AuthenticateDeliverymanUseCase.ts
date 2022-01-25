@@ -6,7 +6,6 @@ interface IAuthenticateDeliveryman {
   username: string;
   password: string;
 }
-
 export class AuthenticateDeliverymanUseCase {
 
   async execute({username, password}: IAuthenticateDeliveryman) {
@@ -27,7 +26,9 @@ export class AuthenticateDeliverymanUseCase {
       throw new Error('Username or password invalid!');
     }  
 
-    const token = sign({ username }, '410dd201295871f313bac4047c53678d', {
+    const secret = String(process.env.SECRET_DELIVERYMAN);
+
+    const token = sign({ username }, secret, {
       subject: deliveryman.id,
       expiresIn: '1d'
     });

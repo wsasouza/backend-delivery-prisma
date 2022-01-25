@@ -6,7 +6,7 @@ interface IPayload {
 }
 
 
-export async function ensureAuthenticateClient(request: Request, response: Response, next: NextFunction) {
+export async function ensureAuthenticateDeliveryman(request: Request, response: Response, next: NextFunction) {
   const authHeader = request.headers.authorization;
 
   if(!authHeader) {
@@ -18,9 +18,10 @@ export async function ensureAuthenticateClient(request: Request, response: Respo
   const [, token ] = authHeader.split(' ');
 
   try {
-    const secret = String(process.env.SECRET_CLIENT);
+    const secret = String(process.env.SECRET_DELIVERYMAN);
+    
     const { sub } = verify(token, secret) as IPayload;
-    request.id_client = sub;
+    request.id_deliveryman = sub;
 
     return next();
 
