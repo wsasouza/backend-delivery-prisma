@@ -12,13 +12,10 @@ export class CreateClientUseCase {
 
     const clientExist = await prisma.clients.findFirst({
       where: {
-        username: {
-          mode: 'insensitive'
-        }
+        username
       }
     });
-
-    console.log(clientExist);
+    
     if(clientExist) {
       throw new Error('Client already exists');
     }
