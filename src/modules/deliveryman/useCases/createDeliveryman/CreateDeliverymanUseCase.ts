@@ -11,7 +11,10 @@ export class CreateDeliverymanUseCase {
   async execute({ username, password }: ICreateDeliveryman) {
     const deliverymanExist = await prisma.deliveryman.findFirst({
       where: {
-        username
+        username: {
+          equals: username,
+          mode: 'insensitive'
+        }
       }
     });
     
@@ -21,12 +24,17 @@ export class CreateDeliverymanUseCase {
     
     const hashPassword = await hash(password, 10);
 
-    const client = await prisma.deliveryman.create({
+    const { id, username: deliveryman } = await prisma.deliveryman.create({
       data: {
         username,
         password: hashPassword
       }
     });
+
+    const client = {
+      id,
+      deliveryman
+    };
 
     return client;
   }
