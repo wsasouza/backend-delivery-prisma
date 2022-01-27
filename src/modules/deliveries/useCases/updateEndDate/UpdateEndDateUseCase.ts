@@ -7,6 +7,16 @@ interface IUpdateEndDate {
 
 export class UpdateEndDateUseCase {
   async execute({ id_delivery, id_deliveryman }: IUpdateEndDate) {
+    const delivered = await prisma.deliveries.findFirst({
+      where: {
+        id: id_delivery,
+      },
+    });
+
+    if (delivered?.end_at) {
+      return delivered;
+    }
+
     const result = await prisma.deliveries.updateMany({
       where: {
         id: id_delivery,
@@ -17,6 +27,10 @@ export class UpdateEndDateUseCase {
       },
     });
 
-    return result;
+    if (result.count !== 1) {
+      throw new Error("Failed to update delivery");
+    }
+
+    return "Performed Delivery";
   }
 }
