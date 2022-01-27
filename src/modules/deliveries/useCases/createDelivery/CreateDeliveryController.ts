@@ -1,9 +1,7 @@
-import { Request, Response } from 'express';
-import { CreateDeliveryUseCase } from './CreateDeliveryUseCase';
-
+import { Request, Response } from "express";
+import { CreateDeliveryUseCase } from "./CreateDeliveryUseCase";
 
 export class CreateDeliveryController {
-
   async handle(request: Request, response: Response) {
     const { item_name } = request.body;
     const { id_client } = request;

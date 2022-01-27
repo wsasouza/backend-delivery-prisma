@@ -1,21 +1,24 @@
-import { NextFunction, Request, Response } from 'express';
-import { verify } from 'jsonwebtoken';
+import { NextFunction, Request, Response } from "express";
+import { verify } from "jsonwebtoken";
 
 interface IPayload {
   sub: string;
 }
 
-
-export async function ensureAuthenticateClient(request: Request, response: Response, next: NextFunction) {
+export async function ensureAuthenticateClient(
+  request: Request,
+  response: Response,
+  next: NextFunction
+) {
   const authHeader = request.headers.authorization;
 
-  if(!authHeader) {
+  if (!authHeader) {
     return response.status(401).json({
-      message: 'Token missing',
+      message: "Token missing",
     });
   }
 
-  const [, token ] = authHeader.split(' ');
+  const [, token] = authHeader.split(" ");
 
   try {
     const secret = String(process.env.SECRET_CLIENT);
@@ -23,10 +26,9 @@ export async function ensureAuthenticateClient(request: Request, response: Respo
     request.id_client = sub;
 
     return next();
-
-  } catch(err) {
+  } catch (err) {
     return response.status(401).json({
-      message: 'Invalid token',
+      message: "Invalid token",
     });
   }
 }

@@ -7,33 +7,32 @@ interface ICreateDeliveryman {
 }
 
 export class CreateDeliverymanUseCase {
-
   async execute({ username, password }: ICreateDeliveryman) {
     const deliverymanExist = await prisma.deliveryman.findFirst({
       where: {
         username: {
           equals: username,
-          mode: 'insensitive'
-        }
-      }
+          mode: "insensitive",
+        },
+      },
     });
-    
-    if(deliverymanExist) {
-      throw new Error('Deliveryman already exists');
+
+    if (deliverymanExist) {
+      throw new Error("Deliveryman already exists");
     }
-    
+
     const hashPassword = await hash(password, 10);
 
     const { id, username: deliveryman } = await prisma.deliveryman.create({
       data: {
         username,
-        password: hashPassword
-      }
+        password: hashPassword,
+      },
     });
 
     const client = {
       id,
-      deliveryman
+      deliveryman,
     };
 
     return client;
