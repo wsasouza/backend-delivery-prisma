@@ -31,6 +31,10 @@ export class UpdateEndDateUseCase {
       throw new Error("Failed to update delivery");
     }
 
-    return "Performed Delivery";
+    const status = {
+      delivered_at: new Date(),
+    };
+
+    return status;
   }
 }
