@@ -1,9 +1,8 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="DeliveryApp" />
+  <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5ZltQIPx--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6paft3mgkrz6m53zom9o.png" alt="DeliveryApp" />
 
 &#xa0;
 
-  <!-- <a href="https://delivery.netlify.app">Demo</a> -->
 </div>
 
 <h1 align="center">Delivery App</h1>
@@ -32,12 +31,15 @@
 
 ## :dart: About
 
-Describe your project
+Backend application with Nodejs using Prisma IO, to perform deliveries. In this application, on the one hand, we will have the customer - who will register and register items to be delivered to a certain location - and, on the other hand, the delivery person - who will be able to pick up or not a certain delivery to be carried out. Typescript, BCrypt, JWT and Express were used.
 
 ## :sparkles: Features
 
-✔️ Feature 1;\
-✔️ Feature 2;\
+✔️ Create client and deliveryman;\
+✔️ Auth client and deliveryman;\
+✔️ Client create delivery;\
+✔️ Deliveryman find and accept delivery;\
+✔️ Deliveryman delivered;\
 
 ## :rocket: Technologies
 
