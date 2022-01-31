@@ -34,24 +34,26 @@
 
 Describe your project
 
-## ✨ Features
+## :sparkles: Features
 
 ✔️ Feature 1;\
 ✔️ Feature 2;\
 
-## 🚀 Technologies
+## :rocket: Technologies
 
 The following tools were used in this project:
 
 - [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [JWT](https://jwt.io/)
 - [Prisma](https://www.prisma.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## ✅ Requirements
+## :white_check_mark: Requirements
 
 Before starting 🏁, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-## 🏁 Starting
+## :checkered_flag: Starting
 
 ```bash
 # Clone this project
@@ -69,11 +71,11 @@ $ yarn start
 # The server will initialize in the <http://localhost:3000>
 ```
 
-## 📝 License
+## :memo: License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-Made with ❤️ by <a href="https://github.com/wsasouza" target="_blank">Walter Santos de Andrade Souza</a>
+Made with :heart: by <a href="https://github.com/wsasouza" target="_blank">Walter Santos de Andrade Souza</a>
 
 &#xa0;
 
