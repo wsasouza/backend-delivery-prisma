@@ -39,7 +39,7 @@ Backend application with Nodejs using Prisma IO, to perform deliveries. In this 
 ✔️ Auth client and deliveryman;\
 ✔️ Client create delivery;\
 ✔️ Deliveryman find and accept delivery;\
-✔️ Deliveryman delivered;\
+✔️ Deliveryman delivered;
 
 ## :rocket: Technologies
 
@@ -77,8 +77,11 @@ $ yarn start
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
+<div align="center">
 Made with :heart: by <a href="https://github.com/wsasouza" target="_blank">Walter Santos de Andrade Souza</a>
 
 &#xa0;
+
+</div>
 
 <a href="#top">Back to top</a>
